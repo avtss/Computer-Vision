@@ -1,0 +1,24 @@
+import cv2
+
+img1 = cv2.imread("Images/img1.jpg", cv2.IMREAD_COLOR)
+
+cv2.namedWindow("Display window", cv2.WINDOW_NORMAL)
+cv2.imshow("Display window", img1)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+img2 = cv2.imread("Images/img2.png", cv2.IMREAD_GRAYSCALE)
+
+cv2.namedWindow("Display window", cv2.WINDOW_AUTOSIZE)
+cv2.imshow("Display window", img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+img3 = cv2.imread("Images/img3.bmp", cv2.IMREAD_IGNORE_ORIENTATION)
+
+cv2.namedWindow("Display window", cv2.WINDOW_FULLSCREEN)
+cv2.imshow("Display window", img3)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
