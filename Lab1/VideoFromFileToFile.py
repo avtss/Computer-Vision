@@ -5,8 +5,8 @@ def readIPWriteTOFile():
     ok, img = video.read()
     w = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
     h = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    fourcc = cv2.VideoWriter_fourcc(*'XVID')
-    video_writer = cv2.VideoWriter("Videos/outputFile.mov", fourcc, 25, (w, h))
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    video_writer = cv2.VideoWriter("Videos/outputFile.mp4", fourcc, 25, (w, h))
     while (True):
         ok, img = video.read()
         cv2.imshow('img', img)

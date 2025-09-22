@@ -14,8 +14,9 @@ cap = cv2.VideoCapture("Videos/vid2.gif", cv2.CAP_ANY)
 
 while (True):
     ret, frame = cap.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     if not(ret):
         break
-    cv2.imshow('frame', frame)
+    cv2.imshow('frame', gray)
     if cv2.waitKey(15) & 0xFF == 27:
         break
