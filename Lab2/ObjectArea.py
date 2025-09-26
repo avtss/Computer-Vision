@@ -16,7 +16,7 @@ while True:
     upper_red = (180, 255, 255)
     red = cv2.inRange(hsv, lower_red, upper_red)
 
-    kernel = np.ones((5, 5), np.uint8)
+    kernel = np.ones((3, 3), np.uint8)
     mask = cv2.erode(red, kernel, iterations=1)  
 
     M = cv2.moments(mask)
