@@ -8,9 +8,9 @@ while True:
         break
 
     h, w = frame.shape[:2]
-    cx, cy = w // 2, h // 2
+    x, y = w // 2, h // 2
 
-    b, g, r = frame[cy, cx]
+    b, g, r = frame[y, x]
 
     if r >= g and r >= b:
         color = (0, 0, 255)
@@ -19,8 +19,8 @@ while True:
     else:
         color = (255, 0, 0)
 
-    cv2.rectangle(frame, (cx - 50, cy - 200), (cx + 50, cy + 200), color, -1)
-    cv2.rectangle(frame, (cx - 200, cy - 50), (cx + 200, cy + 50), color, -1)
+    cv2.rectangle(frame, (x - 50, y - 200), (x + 50, y + 200), color, -1)
+    cv2.rectangle(frame, (x - 200, y - 50), (x + 200, y + 50), color, -1)
 
     cv2.imshow("Filled Cross", frame)
     if cv2.waitKey(1) & 0xFF == 27:
