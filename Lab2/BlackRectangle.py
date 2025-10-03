@@ -19,13 +19,13 @@ while True:
     kernel = np.ones((3, 3), np.uint8)
     mask = cv2.erode(red, kernel, iterations=1)
 
-    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    y, x = np.where(mask > 0)
 
-    if contours:
-        c = max(contours, key=cv2.contourArea)
+    if len(x) > 0 and len(y) > 0:
+        x_min, x_max = np.min(x), np.max(x)
+        y_min, y_max = np.min(y), np.max(y)
 
-        x, y, w, h = cv2.boundingRect(c)
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 0), 2)
+        cv2.rectangle(frame, (x_min, y_min), (x_max, y_max), (0, 0, 0), 2)
 
     cv2.imshow('Black Rectangle', frame)
 
